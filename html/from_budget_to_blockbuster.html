@@ -1,0 +1,343 @@
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>From Budget to Blockbuster | Brandon Anderson</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Brandon Anderson</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="resume.html" target="_blank">Résumé</a></li>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <ul class="icons">
+                <li>
+                    <a href="mailto:mailto:&#098;&#114;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#099;&#097;&#114;&#101;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" 
+                        class="icon solid fa-envelope"
+                        target="_blank">
+                        <span class="label">Email</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/brandonranderson" 
+                        class="icon brands fa-linkedin-in" 
+                        target="_blank">
+						<span class="label">LinkedIn</span>
+					</a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/brandon-r-anderson" 
+                        class="icon brands alt fa-github" 
+                        target="_blank">
+                        <span class="label">GitHub</span>
+					</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Project Header -->
+            <section class="post">
+
+                <header class="major">
+                    <span class="date">Excel • Power Query</span>
+                    <h1>From Budget to Blockbuster</h1>
+                    <p>
+                        This project evaluates how budgets, genres, production trends, and audience ratings influence movie success by analyzing over 45,000 films to identify patterns associated with commercial performance and critical acclaim.                    
+                    </p>
+                </header>
+
+                <span class="image main">
+                    <img src="images/from_budget_to_blockbuster_dashboard.png"
+                        alt="From Budget to Blockbuster dashboard" 
+                        style="width: 118%; margin-left: -5%;"/>
+                </span>
+
+                <!-- Quick Links -->
+                <ul class="actions special">
+                    <li>
+                        <a href="https://github.com/brandon-r-anderson/from-budget-to-blockbuster"
+                            class="button primary icon brands fa-github"
+                            target="_blank">
+                            View GitHub Repository
+                        </a>
+                    </li>
+                </ul>
+
+                <hr />
+
+                <!-- Project Overview -->
+                <h2>Project Overview</h2>
+
+                <p>
+                    This project explores how financial investment, audience reception, and production trends relate to movie success. Using metadata from over 45,000 films, the analysis examines relationships between budgets, revenues, genres, countries of origin, and ratings from both TMDb and MovieLens.
+                </p>
+
+                <p>
+                    The goal is to identify factors associated with commercial and critical success, determine which genres and countries consistently produce highly rated films, and evaluate whether larger production budgets translate to greater box office performance. This matters because films are often judged by a single metric such as revenue or rating, despite success being influenced by multiple interconnected factors that can be better understood through exploratory analysis and visualization.
+                </p>
+
+                <!-- Dataset -->
+                <h2>Dataset</h2>
+
+                <p>
+                    <i>The Movies Dataset</i> from Kaggle served as the primary data source.
+                    The <code>movies_metadata</code> table contained information on over
+                    45,000 films, including release dates, runtimes, budgets, revenues,
+                    genres, languages, production companies, and TMDb ratings.
+                </p>
+
+                <p>
+                    Additional audience feedback was obtained from the
+                    <code>ratings_small</code> MovieLens dataset. Since the full ratings
+                    dataset exceeded Excel's row limitations, ratings were aggregated by
+                    movie_id to calculate an average rating and total rating count for each
+                    film before joining the datasets.
+                </p>
+
+                <p>
+                    Following cleaning, validation, and transformation in Power Query, the
+                    final analytical dataset contained 45,393 movies and integrated
+                    information from both TMDb and MovieLens, providing the foundation for
+                    Pivot Table analysis and dashboard development in Excel.
+                </p>
+
+                <!-- Tools -->
+                <h2>Tools & Technologies</h2>
+
+                <ul>
+                    <li><strong>Excel:</strong> Exploratory analysis, dashboarding, and reporting</li>
+                    <li><strong>Power Query:</strong> ETL, data cleaning, transformation, and validation</li>
+                </ul>
+
+                <!-- Methodology -->
+                
+                <h2>Methodology</h2>
+
+                <ol>
+                    <li>
+                        <strong>Data Acquisition:</strong>
+                        Imported <i>The Movies Dataset</i> from Kaggle, using
+                        <code>movies_metadata</code> as the primary dataset and
+                        <code>ratings_small</code> as a secondary dataset. Since the full
+                        ratings dataset exceeded Excel's row limitations, the <code>ratings_small</code> 
+                        dataset was used instead by aggregating by movie_id to calculate an average rating and total
+                        rating count for each movie prior to joining the datasets.
+                    </li>
+
+                    <li>
+                        <strong>Data Cleaning & Validation:</strong>
+                        Performed all transformations in Power Query, removing unnecessary
+                        columns, duplicates, blanks, and errors while correcting data types,
+                        trimming whitespace, standardizing genres, and title-casing text
+                        fields. Validation checks excluded malformed IMDb identifiers,
+                        invalid language codes, implausible runtimes, dates before
+                        1/1/1900, suspicious text values, and records corresponding to
+                        television shows.
+                    </li>
+
+                    <li>
+                        <strong>Metric Development:</strong>
+                        Aggregated MovieLens ratings to obtain average ratings and rating
+                        counts for each movie and rescaled ratings to a common 0–10 scale.
+                        Developed a weighted composite rating metric combining TMDb and
+                        MovieLens scores while accounting for rating volume.
+                    </li>
+
+                    <li>
+                        <strong>Quality Assurance:</strong>
+                        Created a <code>title_quality_flag</code> field to classify movie
+                        titles as Valid, Review, or Invalid using pattern matching and text
+                        heuristics. This field was used to filter out potentially corrupted
+                        titles in analyses highlighting highly rated and popular movies.
+                    </li>
+
+                    <li>
+                        <strong>Exploratory Analysis:</strong>
+                        Analyzed a final dataset containing 45,393 movies using Pivot Tables
+                        to identify highly rated and popular films, compare genre
+                        performance, and summarize production trends across countries.
+                    </li>
+
+                    <li>
+                        <strong>Dashboard Development:</strong>
+                        Built an interactive Excel dashboard featuring KPI cards, Pivot
+                        Charts, and comparative visualizations examining relationships
+                        between budgets, revenues, genres, production countries, and movie
+                        popularity.
+                    </li>
+
+                    <li>
+                        <strong>Insight Generation:</strong>
+                        Evaluated trends in audience preferences, production activity, and
+                        financial performance to identify factors associated with commercial
+                        and critical success.
+                    </li>
+                </ol>
+
+                <!-- Key Findings -->
+                <h2>Key Findings</h2>
+                <p>Film production was heavily concentrated within a small number of countries, with the United States contributing substantially
+                    more titles than any other nation in the dataset.
+                </p>
+                <p>
+                    The most popular movies are not necessarily the most profitable, and vice versa. In fact, none of the top 10 most popular movies
+                    place in the top 10 most profitable movies. There is also a trend among the most profitable films of being older. Older films
+                    had much smaller budgets, so their return on investment is many times higher than modern movies. Box office re-releases over the
+                    decades also contribute to this older movie bias.
+                </p>
+                <p>
+                    Recency bias places modern films at the top of most popular movies. TMDB's popularity rating is partly measured by online user engagement,
+                    so <i>The Godfather</i> may receive less online user engagement than <i>Minions</i>, despite being more critically acclaimed.
+                </p>
+                <p>
+                    Overall, the dataset shows that film performance is highly dependent on the metric being evaluated. 
+                    Return on investment favors lower-budget, older films that benefit from long-term revenue accumulation, 
+                    while popularity reflects more recent audience engagement and platform-driven visibility. 
+                    As a result, rankings of “best” films differ substantially depending on whether success is defined by profit, ROI, or user engagement.
+                </p>
+
+                <h2>Limitations</h2>
+                <p> 
+                    The full <code>ratings</code> dataset would have been more comprehensive than the <code>ratings_small</code> dataset,
+                    but Excel's row limitations do not allow it. Power BI is the better option for massive datasets like <code>ratings</code>.
+                </p>
+                <p>
+                    Only a small fraction of movies in this dataset have budget and revenue information available, making rankings and analyses
+                    largely incomplete. One or more datasets focused on providing budget and revenue data could have provided significantly more
+                    information for in-depth budget-revenue analysis. Even more, a calculation to adjust for inflation would greatly reduce bias
+                    between older and newer movies.
+                </p>
+                <p>
+                    Only a small fraction of movies in this dataset have MovieLens ratings. Since the <code>weighted_composite_score</code>
+                    is weighted by number of ratings from each platform, TMDB ratings are dominant. For this reason, the "Top Rated Movies"
+                    graph may as well be called "Top Rated Movies According to TMDB." Additionally, the popularity score assigned by TMDB is
+                    proprietary and uses an undisclosed algorithm. This renders any interpretation of popularity in this data model
+                    somewhat ambiguous. By incorporating additional platform rating and popularity datasets from different platforms, this data model would
+                    have more stable footing for analysis.
+                </p>
+                <p>
+                    A movie can be categorized into more than one genre; a result of assigning each movie to only one genre is potentially overemphasizing
+                    metric differences between genres. For example, a production company using this dashboard may choose to support low budget horror films 
+                    upon seeing a substantial return on investment. However, if an additional genre were assigned to each movie, it may be discovered that
+                    horror movies with a hint of comedy are more financially successful than horror movies as a whole. There are undeniably multiple ways of
+                    accounting for genre ambiguity, and doing this provides more granular data for in-depth genre analysis. 
+                </p>
+
+                <!-- Skills -->
+                <h2>Technical Skills Demonstrated</h2>
+
+                <div class="tech-tags">
+                    <span>Extract, Transform, Load (ETL)</span>
+                    <span>Power Query (Data Transformation)</span>
+                    <span>Data Cleaning</span>
+                    <span>Data Validation Rules</span>
+                    <span>Data Normalization</span>
+                    <span>Duplicate Detection</span>
+                    <span>KPI Design</span>
+                    <span>Data Quality Assurance</span>
+
+                    <span>Pivot Tables</span>
+                    <span>Pivot Charts</span>
+                    <span>Excel Dashboarding</span>
+                    <span>Interactive Reporting</span>
+
+                    <span>Feature Engineering</span>
+                    <span>Weighted Scoring Systems</span>
+                    <span>Comparative Analysis</span>
+                    <span>Trend Analysis</span>
+
+                    <span>Data Aggregation</span>
+                    <span>Relational Data Joining</span>
+                    <span>Slicers</span>
+                </div>
+                <br>
+
+                <!-- Back Button -->
+                <ul class="actions">
+                    <li>
+                        <a href="index.html" class="button">
+                            ← Back to Projects
+                        </a>
+                    </li>
+                </ul>
+
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <h3>Social</h3>
+
+                <ul class="icons alt">
+                    <li>
+                        <a href="mailto:mailto:&#098;&#114;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#099;&#097;&#114;&#101;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" 
+                            class="icon solid fa-envelope"
+                            target="_blank">
+                            <span class="label">Email</span>
+                        </a>
+					</li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/brandon-anderson-bio"
+                            class="icon brands fa-linkedin-in"
+                            target="_blank">
+                            <span class="label">LinkedIn</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/splatchamp"
+                            class="icon brands alt fa-github"
+                            target="_blank">
+                            <span class="label">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Brandon Anderson</li><li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li></ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
