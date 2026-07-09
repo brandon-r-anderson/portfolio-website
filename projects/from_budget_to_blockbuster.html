@@ -222,32 +222,33 @@
                 </p>
 
                 <h2>Limitations</h2>
-                <p> 
-                    The full <code>ratings</code> dataset would have been more comprehensive than the <code>ratings_small</code> dataset,
-                    but Excel's row limitations do not allow it. Power BI is the better option for massive datasets like <code>ratings</code>.
-                </p>
-                <p>
-                    Only a small fraction of movies in this dataset have budget and revenue information available, making rankings and analyses
-                    largely incomplete. One or more datasets focused on providing budget and revenue data could have provided significantly more
-                    information for in-depth budget-revenue analysis. Even more, a calculation to adjust for inflation would greatly reduce bias
-                    between older and newer movies.
-                </p>
-                <p>
-                    Only a small fraction of movies in this dataset have MovieLens ratings. Since the <code>weighted_composite_score</code>
-                    is weighted by number of ratings from each platform, TMDB ratings are dominant. For this reason, the "Top Rated Movies"
-                    graph may as well be called "Top Rated Movies According to TMDB." Additionally, the popularity score assigned by TMDB is
-                    proprietary and uses an undisclosed algorithm. This renders any interpretation of popularity in this data model
-                    somewhat ambiguous. By incorporating additional platform rating and popularity datasets from different platforms, this data model would
-                    have more stable footing for analysis.
-                </p>
-                <p>
-                    A movie can be categorized into more than one genre; a result of assigning each movie to only one genre is potentially overemphasizing
-                    metric differences between genres. For example, a production company using this dashboard may choose to support low budget horror films 
-                    upon seeing a substantial return on investment. However, if an additional genre were assigned to each movie, it may be discovered that
-                    horror movies with a hint of comedy are more financially successful than horror movies as a whole. There are undeniably multiple ways of
-                    accounting for genre ambiguity, and doing this provides more granular data for in-depth genre analysis. 
-                </p>
-
+                <ul>
+                    <li>
+                        The full <code>ratings</code> dataset would have been more comprehensive than the <code>ratings_small</code> dataset,
+                        but Excel's row limitations do not allow it. Power BI is the better option for massive datasets like <code>ratings</code>.
+                    </li>
+                    <li>
+                        Only a small fraction of movies in this dataset have budget and revenue information available, making rankings and analyses
+                        largely incomplete. One or more datasets focused on providing budget and revenue data could have provided significantly more
+                        information for in-depth budget-revenue analysis. Even more, a calculation to adjust for inflation would greatly reduce bias
+                        between older and newer movies.
+                    </li>
+                    <li>
+                        Only a small fraction of movies in this dataset have MovieLens ratings. Since the <code>weighted_composite_score</code>
+                        is weighted by number of ratings from each platform, TMDB ratings are dominant. For this reason, the "Top Rated Movies"
+                        graph may as well be called "Top Rated Movies According to TMDB." Additionally, the popularity score assigned by TMDB is
+                        proprietary and uses an undisclosed algorithm. This renders any interpretation of popularity in this data model
+                        somewhat ambiguous. By incorporating additional platform rating and popularity datasets from different platforms, this data model would
+                        have more stable footing for analysis.
+                    </li>
+                    <li>
+                        A movie can be categorized into more than one genre; a result of assigning each movie to only one genre is potentially overemphasizing
+                        metric differences between genres. For example, a production company using this dashboard may choose to support low budget horror films 
+                        upon seeing a substantial return on investment. However, if an additional genre were assigned to each movie, it may be discovered that
+                        horror movies with a hint of comedy are more financially successful than horror movies as a whole. There are undeniably multiple ways of
+                        accounting for genre ambiguity, and doing this provides more granular data for in-depth genre analysis. 
+                    </li>
+                </ul>
                 <!-- Skills -->
                 <h2>Technical Skills Demonstrated</h2>
 
