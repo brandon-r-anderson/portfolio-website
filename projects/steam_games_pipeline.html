@@ -1,0 +1,283 @@
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Steam Deals Pipeline | Brandon Anderson</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Brandon Anderson</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="../index.html">Projects</a></li>
+                <li><a href="../resume.html" target="_blank">Résumé</a></li>
+                <li><a href="../about.html" target="_blank">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+
+            <ul class="icons">
+                <li>
+                    <a href="mailto:mailto:&#098;&#114;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#099;&#097;&#114;&#101;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" 
+                        class="icon solid fa-envelope"
+                        target="_blank">
+                        <span class="label">Email</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/brandonranderson" 
+                        class="icon brands fa-linkedin-in" 
+                        target="_blank">
+						<span class="label">LinkedIn</span>
+					</a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/brandon-r-anderson" 
+                        class="icon brands alt fa-github" 
+                        target="_blank">
+                        <span class="label">GitHub</span>
+					</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Project Header -->
+            <section class="post">
+
+                <header class="major">
+                    <span class="date">Python • SQL • PostgreSQL • AWS • Docker • Snowflake • dbt • Airflow </span>
+                    <h1>Steam Deals Pipeline <br>(In Progress)</h1>
+                    <p>
+                       This project builds an automated data pipeline that extracts Steam game deal data from an API, stores raw data for reproducibility, and loads structured historical observations into PostgreSQL to track prices, discounts, ratings, and deal changes over time. 
+                    </p>
+                </header>
+
+                <span class="image main">
+                    <img src="../images/steam-games-pipeline-collage.jpg"
+                        alt="From Budget to Blockbuster dashboard" 
+                        style="width: 118%; margin-left: -5%;"/>
+                </span>
+
+                <!-- Quick Links -->
+                <ul class="actions special">
+                    <li>
+                        <a href="https://github.com/brandon-r-anderson/steam-deal-analytics"
+                            class="button primary icon brands fa-github"
+                            target="_blank">
+                            View GitHub Repository
+                        </a>
+                    </li>
+                </ul>
+
+                <hr />
+
+                <!-- Project Overview -->
+                <h2>Project Overview</h2>
+
+                <p>
+                    This project builds an end-to-end data pipeline that extracts Steam game and deal data from an API, preserves raw source data, and transforms it into structured records for storage and analysis. Historical observations are used to track changes in game prices, discounts, ratings, and deal availability over time.
+                </p>
+
+                <p>
+                    The goal is to create a reliable, reproducible data workflow that turns frequently changing API data into analysis-ready datasets while demonstrating core data engineering practices such as API extraction, data modeling, pipeline logging, validation, and cloud storage. This makes it possible to analyze how Steam deals change over time rather than relying on a single snapshot of current prices.
+                </p>
+
+                <!-- Dataset -->
+                <h2>Dataset</h2>
+
+                <p>
+                    Deal data is collected from the CheapShark API, which provides information on games and their available Steam deals. Each pipeline run extracts fields including game and deal identifiers, normal and sale prices, discount percentages, Steam ratings, deal ratings, release dates, and timestamps indicating when deals were last changed.
+                </p>
+
+                <p>
+                    The pipeline preserves the original API responses as raw JSON files before processing the data into structured records. Because the pipeline runs repeatedly, each extraction creates a new set of deal observations rather than overwriting previous prices, allowing changes in pricing and discounts to be tracked historically.
+                </p>
+
+                <p>
+                    The processed data is stored in a PostgreSQL relational model consisting of games, stores, pipeline runs, and deal observations. The deal_observations table contains the historical measurements and links each observation to its corresponding game, store, and pipeline run, providing an analysis-ready dataset for examining Steam deal and pricing trends over time.
+                </p>
+
+                <!-- Tools -->
+                <h2>Tools & Technologies</h2>
+
+                <ul>
+                    <li><strong>Python:</strong> Automation, extraction, cleaning, loading</li>
+                    <li><strong>SQL:</strong> Analytical querying</li>
+                    <li><strong>PostgreSQL:</strong> Local data storage and management</li>
+                    <li><strong>AWS:</strong> Cloud data storage and management</li>
+                    <li><strong>Docker:</strong> Containerization</li>
+                    <li><strong>Snowflake:</strong> Warehousing</li>
+                    <li><strong>dbt:</strong> Transformation</li>
+                    <li><strong>Airflow:</strong> Workflow orchestration</li>
+
+                </ul>
+
+                <!-- Methodology
+                
+                <h2>Methodology</h2>
+
+                <ol>
+                    <li>
+                        <strong></strong>
+                        
+                    </li>
+
+                    <li>
+                        <strong></strong>
+                        
+                    </li>
+
+                    <li>
+                        <strong></strong>
+                        
+                    </li>
+
+                    <li>
+                        <strong></strong>
+                        
+                    </li>
+
+                    <li>
+                        <strong></strong>
+                        
+                    </li>
+
+                    <li>
+                        <strong></strong>
+                        
+                    </li>
+
+                    <li>
+                        <strong></strong>
+                    </li>
+                </ol>
+
+                Key Findings
+                <h2>Key Findings</h2>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+
+                <h2>Limitations</h2>
+                <ul>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+            -->
+                <!-- Skills -->
+                <h2>Technical Skills Demonstrated</h2>
+
+                <div class="tech-tags">
+                    <span>SQL: Joins</span>
+                    <span>SQL: Window Functions</span>
+                    <span>SQL: CTEs (Common Table Expressions)</span>
+                    <span>SQL: Subqueries</span>
+
+                    <span>Relational Data Modeling</span>
+                    
+                    <span>Python: Automation</span>
+                    <span>Python: Pandas</span>
+
+                    <span>Extract, Transform, Load (ETL)</span>
+                    <span>Data Cleaning</span>
+                    <span>Data Validation Rules</span>
+                    <span>Data Normalization</span>
+                    <span>Duplicate Detection</span>
+                    <span>Data Quality Assurance</span>
+                </div>
+                <br>
+
+                <!-- Back Button -->
+                <ul class="actions">
+                    <li>
+                        <a href="../index.html" class="button">
+                            ← Back to Projects
+                        </a>
+                    </li>
+                </ul>
+
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <h3>Social</h3>
+
+                <ul class="icons alt">
+                    <li>
+                        <a href="mailto:mailto:&#098;&#114;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#097;&#110;&#100;&#101;&#114;&#115;&#111;&#110;&#046;&#099;&#097;&#114;&#101;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" 
+                            class="icon solid fa-envelope"
+                            target="_blank">
+                            <span class="label">Email</span>
+                        </a>
+					</li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/brandon-anderson-bio"
+                            class="icon brands fa-linkedin-in"
+                            target="_blank">
+                            <span class="label">LinkedIn</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/brandon-r-anderson"
+                            class="icon brands alt fa-github"
+                            target="_blank">
+                            <span class="label">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Brandon Anderson</li><li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li></ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
